@@ -1102,8 +1102,11 @@ generate_font(FILE *out, char *iname, char *oname)
      * End the font and do memory cleanup on the glyph and raster structures.
      */
     eof = fprintf(out, "ENDFONT\n");
+    if (eof < 0) {
+       return eof;
+    }
 
-    return eof;
+    return 0;
 }
 
 static int
