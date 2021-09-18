@@ -60,12 +60,12 @@ distclean: clean
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
 install: otf2bdf
-	$(MKINSTALLDIRS) $(bindir) $(mandir)/man1
-	$(CP) otf2bdf $(bindir)/otf2bdf
-	$(CP) otf2bdf.man $(mandir)/man1/otf2bdf.1
+	$(MKINSTALLDIRS) $(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1
+	$(CP) otf2bdf $(DESTDIR)$(bindir)/otf2bdf
+	$(CP) otf2bdf.man $(DESTDIR)$(mandir)/man1/otf2bdf.1
 
 uninstall:
-	$(RM) -f $(bindir)/otf2bdf
-	$(RM) -f $(mandir)/man1/otf2bdf.1
+	$(RM) -f $(DESTDIR)$(bindir)/otf2bdf
+	$(RM) -f $(DESTDIR)$(mandir)/man1/otf2bdf.1
 
 # end of Makefile
